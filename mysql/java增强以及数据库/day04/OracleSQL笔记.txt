@@ -1,0 +1,359 @@
+oracledbconsoleorcl服务
+oraclemtsrcheduleryservice服务
+oracleoradb11g_home1tnslistener服务
+oracleserviceorcl服务
+
+192.168.3.104
+orcl
+px
+服务器数据库地址
+SQL
+数据库语言：（三种）DML  DDL   DCL === ***开头部分为常用
+一一一.DML;
+DML 数据操纵语言Data Manipulation Language
+insert update delete  ***select 
+二二二.DDL;
+DDL 数据定义语言Data Definiton Language
+create table 创建数据库表
+alter table 更改表结构 添加删除修改列长度
+drop table 删除表
+create index 在表上建立索引
+drop index 删除索引
+三三三.DCL; 
+DCL 数据控制语言Data Control Language
+grant 授予访问权限
+revoke 撤销访问权限
+***commit 提交事务处理
+***rollback 事务处理回退
+***savepoint 设置保存点
+lock 对数据库特定部分进行锁定
+
+
+      SELECT  *|{[DISTINCT] column [alias],...}
+      FROM    table;
+
+DUAL dual伪表
+===Oracle数据库中学习===
+SQL语句&SQL*Plus命令(概念扫盲)
+SQL:
+	*一种语言。
+	*ANSI标准。
+	*关键字不能缩写。
+	*使用语句控制数据库中的表
+	的定义信息和表中的数据。
+SQL*Plus:
+	*一种环境
+	*Oracle的特性之一
+	*关键字可以缩写
+	*命令不能改变数据库中的数据的值
+	*集中运行
+	使用SQL*Plus可以:
+	描述表结构。
+	编辑 SQL 语句。
+	执行 SQL语句。 
+	将 SQL 保存在文件中并将SQL语句执行结果保存在文件中。
+	在保存的文件中执行语句。
+	将文本文件装入 SQL*Plus编辑窗口。
+   (SQL*Plus是一个工具可以传送sql语句给oracle服务器 ，根据传递的sql语句信息，比如查询，
+    可以将查询结果反馈给客户端)
+	例：desc client （desc 表）describe(描述)表
+	desc 就是SQL*Plus的关键字 describe的缩写
+	ed 也是SQL*Plus的关键字 edit的缩写
+一：基本SQL的select语句：
+	注：无特殊情况或者备注及是MySQL.Oracle通用的sql语句!!
+	Oracle的sql中只有起别名才用双引号，其它情况都用单引号表示字符串
+<<<1.0.1
+ select * from 表
+ select 字段 from 表
+ desc 表 （列出表中的列）
+	(Oracle中输入edit 打开编辑器Text editor或者直接输入ed,编辑器中的注释方法为：“--”）
+<<<1.0.2
+  对字段支持 + - * / 基本的数学运算，运算顺序等同于数学运算
+    例子：select client_sal*12 as linshitable from clent
+    select 8*2 from dual(dual 表示伪表，不存在的表,使用此表可以进行算术运算)
+	(前提是字段被标记成number还有date类型,日期不能乘除，只能加减)
+  ** || 连接符用来合成列
+	例子：select client_name||clent_id as linshitable from client 
+	tom001
+  ** select client_name || '` is a ' || client_id as"linshi" from client
+	会打引出单个字段名为：linshi
+	tom is a 001
+	(MySQL数据库中并不能出现这种情况)
+<<<1.0.3
+临时表的命名（MySQL数据库中以验证）
+MySQL中如果存在as关键字 再加双引号会报错!
+ select client_type as linshi from client
+ select client_type 'linshi' from client
+ select client_type "linshi" fron client 
+ select client_type linshi from client 
+注意：Oracle中要使用区分临时字段的大小写，空格必须使用"临时表名"的方式，
+直接使用as方式会是字段名称变成大写！
+
+<<<1.0.4 distinct（用于去除查询字段时的重复数据）
+ select distinct client_type from client
+
+<<<1.0.5 对于日期类型的字段查询
+ 1.(了解就行，被抛弃的写法)
+ select client_name,client_date from client where client_date='7-6月-1994'
+ ***2.(以后主要应用的sql语句写法)
+ select client_name,client_date 
+ from client
+ where to_char(client_date,'yyyy-mm-dd')='1994-06-07'
+<<<1.0.6 比较运算符
+ 1.and 使用
+ select client_sal,client_name from client where client_sal>=4000 and client_sal<=7000
+ 2.between and 在两个值之间 (包含边界)	
+ select client_sal,client_name from client where client_sal between 4000 and 7000
+ 3.in等同于or连接
+ select client_type,client_name where client_type=1 or client_type=2 or client_type=3
+ select client_type,client_name where client_type in (1,2,3)
+ 4.like模糊查询
+ select client_name from client where client_name like '%a%'
+ (%a 表示末尾是a的客户...a%以a开头的客户 想找第二个字符是a的客户就'_a%'
+ 第几位前面就多几个下划线 )
+ select client_name from client where client_name like '%\_%' escape '\'
+ (查询客户名称中含有下划线的客户，单独使用'%_%'是查询所有含有字符的字段，
+ 需要加入转义符号'\' 并使用escape '\' 注明.'#' 并使用escape '#'也可以 )
+ 5.is null是空值，查询是空值的。
+   is not null不是空值的。   
+<<<1.0.7 Order by的使用 (asc从小到大，升序排列。  desc从大到小，降序排列。)
+   多层排序；需求工资都是1万的情况下，按照名字来排序
+   select client_name,client_sal from client order by client_sal desc ,client_name desc
+
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+	Oracle第六节 练习；
+A：查询姓名中有字母a和e的客户姓名。
+  1. select client_name from client where client_name like '%e%a%' or client_name like '%a%e%'
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+二 sql单行函数;y=f(x)  y=f(x1,x2)   y=f(x1,x...,Xn)
+ 在select语句中使用字符，数字，日期和***转换函数。***条件表达式
+ 1.字符控制函数：
+   select lower('YUANHANG'),upper('YuAn Hang'),initcap('AtLianChuanZhiRong')
+   lower 全部转换成小写  upper 全部转换成大写   initcap 首字母大写（转换成英文名称格式）
+   例：select * from client where upper (client_name)='KING'
+   concat('Hello','World')字符串的拼接  输出结果为HelloWorld 
+   substr('HelloWorld',2,4)字符串的截取 结果为ello 字符串的起始位置从1开始，区别于java
+   length('hehe')字符串的长度  输出结果为4
+   instr（'wode','o')判断字符在字符串中，首次出现的位置。如果字符串里面没有返回0. 
+  *lpad(client_sal,10,'')工资右对齐多出来的位在左边显示，显示10位，不足十位用‘ ’里的符号代替。
+      效果：  	12
+               123
+  *rpad(client_sal,10,'')工资左侧对齐，与上面的正好相反
+      效果：  	323
+                42
+  *trim('H' from 'HHHellHellH')移除 去除首尾中间保留
+  replace('abcdbb','b','m')所有的都被替换
+  2.数字控制函数：
+	round 四舍五入
+	round(435.45,1) round(435.45) round(435.45,-1)
+     结果为：435.5               435            440
+	第一个参数是要运算的数字，第二个参数指的是小数点后保留几位小数，负数为向前进几位。 
+	trunc(435.45,1) trunc(435.45,1) trunc(435.45,1)
+     结果为:	43.4           43          430
+	表示截断，不管大于还是小于5都舍去。
+	select mod(1100,100) from daul;
+     结果为：0   表示求余数...
+  3.日期函数：含有两个值日期跟时间.
+	sysdate...
+	在日期上加上或减去一个数字仍是日期。
+	两个日期相减返回日期之间相差的天数，日期不允许做加法，无意义。
+	可以用数字除以24来向日期中加上或减去天数
+	select sysdate,sysdate+1,sysdate-3 from daul;
+	
+	select employee_id,last_name,sysdate -hire_date  worked_days from employees
+	算一下来公司多少天了。
+	MONTHS_BETWEEN   两个日期相差的月数
+	ADD_MONTHS	向指定日期中加上若干月数
+	NEXT_DAY	指定日期的下一个星期 * 对应的日期
+	LAST_DAY	本月的最后一天
+	ROUND		四舍五入
+	TRUNC 		日期截断
+  4.转换关系   
+	隐式转换：date<<>>varchar<<>>number  默认的。
+	显式转换：
+		date可以通过to_char转换成character型
+		character可以通过to_number转换成number型
+		（to_date  to_number to_char 三种转换方式）
+		to_char(date,'yyyy-mm-dd')='1992-06-07'
+		to_date('1994-06-07','yyyy-mm-dd')-date
+		转换的时候用L来表示本地的货币符号（9 0 小数点 逗号 $ 还有L ）
+
+	通用函数：
+		nvl 可以转换空值 
+		seelect last_name,nvl(to_char(department_id),'没有部门')from employees
+		nvl2 函数
+		nvl2(expr1,expr2,expr3)当expr1不为null返回expr2，为null返回expr3
+  		nullif函数
+		coalesce函数
+    5.条件表达式
+		两种方法
+		1.case表达式
+			例：部门id等于10 打印工资1.1倍。部门id等于20 打印工资1.5倍。其他部门翻1.3倍
+			case 字段(dapartment_id) when 条件 10 then salary*1.1
+			when 20 then salary*1.5
+			else salary *1.3 end 
+		2.decode表达式
+			例: 部门10,1.1倍工资，20部门1.5倍，其余部门1.3倍
+			decode(department_id,10,salary*1.1,
+					      20,salary*1.5,
+					         salary*1.3)
+第四节 多表查询：
+	例子：select employess_id,department_id,department_name
+		from employess,department
+		从两张不同的表查询。 会查询出员工人数乘以部门个数的查询结果。
+	笛卡尔集的错误 没有加过滤条件。（链接条件没有加入）
+	
+	内连接：只返回满足条件的结果。两个表中要有两个相等的字段。
+	外链接： 两个表在链接过程中除了返回满足链接条件的行以外 
+		还返回左或右表中不满足条件的行，这种链接成为左右外连接
+		没有匹配的行时，结果表中相应的列为空(null),外链接的where
+		子句条件类似于内部链接，但是连接条件中没有陪陪的行的表的列
+		后面要加外连接运算符，即用括号括起来的加号(+).
+	    natural jion 自然连接  自动识别两个表的相同的字段进行连接。
+            表1join表2 using(字段)是自然连接的加强版  但是也有局限条件，括号里的字段数据
+            类型与字段名称必须相等。
+            表1jion表2  on 表1.字段=表2.字段。有效的避免了join using的限制条件。
+            SQL 1999语法 想把左边和右边不满足条件的结果都显示出来（满外连接）
+            表1 full outer join 表2 on 表1.字段=表2.字段
+	自连接：表自己连自己  一个员工表中有老板id和员工id.
+	    例：select emp.last_name,manager.last_name,manager.email
+		from employess emp,employess manager
+		where emp.manager_id=manager.employess_id and lower(emp.last_name)='chen'	
+第五节	分组函数:
+	分组函数就是多行函数.使用group by 和 having 语句。
+	avg 求平均值 count 求条数和 max 求最大值 min 求最小值 sum求值得和
+	stddev 样本的标准差（方差）每条数据跟平均数据的差的平方和。
+	stddev做一个了解.例如两个运动员平均跳远成绩都是2.1，张三的方差是10，李四的方差是3.选择李四。李四成绩稳定。
+	where紧跟from后面写  where语句中不能再使用组函数了 不能加avg(salary)>600类似的组函数了。只需要使用having代替
+	having 不用紧跟from 了。
+	例:求出各部门中平均工资大于600的部门，以及其平均工资。
+	select department_id avg(salary)
+	from emloyess
+	having avg(salary)>600
+	group by department_id
+	order by department_id asc
+	***重点  where条件中不能再使用avg count sum max min等分组函数
+	必须使用having来代替。(asc 顺序排列  desc倒叙排列)
+	select max(avg(salary))
+	from employess
+	group by department_id
+	求出部门最大的平均共组  组函数可以相互嵌套的。
+	
+	子查询:单行子查询  多行子查询。
+	谁的工资比黄渤的高。
+	select salary name from employees where salary>(
+	select salary from employees where name='黄渤')
+  	例:返回job_id与141号员工相同，salary比143号员工多的员工姓名，job_id和工资
+	首先分析题目写出以下查询条件
+	select last_name,job_id,salary
+	from employees
+	where job_id=(
+			
+			)
+	and salary>(
+
+			)
+	然后相应的在两个括号中补充子查询条件。
+	select job_id from employees where employees_id=141
+	select salary from employees where employees_id=143
+	例：返回公司工资最少的员工的last_name,job_id和salary
+	一样的思想；首先写外层
+	select last_name ,job_id ,salary
+	from employees 
+	where salary=(
+
+			)
+	然后补充公司最少的工资.
+	select min(salary) from  employees
+	例：前面的两个例子都没有涉及到组函数。
+		查询最低工资大于50号部门最低工资的部门id和其最低工资
+	思想想从内层开始写；首先查询50号部门的最低工资
+	select min(salary) from employees where department_id=50
+	然后写最低工资大于上面查询的。
+	selct min(salary) department_id from employees
+	group by deparment_id
+	having min(salary)>(
+
+			)
+	然后把第一个填充到括号里面就行了。
+	重要的事情说三遍*****where后面不能使用分组函数了  要用having来代替 having没必要放在from后面 where则必须放在from后面
+	********************where后面不能使用分组函数了  要用having来代替 having没必要放在from后面 where则必须放在from后面
+	********************where后面不能使用分组函数了  要用having来代替 having没必要放在from后面 where则必须放在from后面
+	例子：在多行子查询中使用any 返回多个结果比任一一个的意思。
+	--返回其他部门中比job_id为'IT_prog'部门任一工资低的员工的
+	--员工号 姓名 job_id 以及salary
+	思路一样的。先分析写出
+	select employees_id,name,job_id,salary
+	from employees
+	where job_id<>'IT_prog' and salary <any (
+		select salary from eployees where job_id='IT_prog'
+	) 
+	用all表示所有。跟any的任一有所不同
+第七节  创建和管理表DDL语言            DML语言就是增删改查Crud.
+	命名规则：
+		1必须已字母开头。
+		2必须在1到30个字符之间。
+		3必须只能包含A-Z,a-z,0-9,_,$,和#
+		4必须不能和用户定义的其他对象重名
+		5必须不能是Oracle的保留字
+		primary key(id)指明主键为id
+							desc显示表结构			TABLE CREATED 表示创建成功了。
+	创建表第一种方式(白手起家)  create table emp1(
+		id number(10),
+		name varchar2(20),
+		hire_date date
+		)				oracle 中是 varchar2 来表示varchar MySQL中就是varchar
+	创建表的第二种方式(使用已有表格中的列)	    create table emp2
+		as select employees_id,last_name name,hire_date,salary from employees
+		**********原来有的表的数据也可以加进来  
+		后面可以加上过滤条件 不要那么多数据 where depatment_id=80
+		不要数据的话 就可以在where里面加一个表中没有的条件  就是空的。
+		where  1=2 加上这个条件 这个表就是空的。
+	数据类型：：
+		*varchar2(size)可变长字符数据
+		*char(size)定长数据
+		*number(p.s)可变长数值数据
+		*date日期类型数据
+		long可变长字符数据 最大可达2G
+		clob字符数据最大可达4G
+		raw(long raw)原始的二进制数据
+		*blob二进制数据 最大可达4G
+		bftle存储外部文件的数据 最大可达4G
+		rowid行地址
+	修改表  增删改列
+		alter table 
+		**增加列：add
+		alter table emp1
+		add(email varchar2(20))
+		**修改：modify
+		aler table emp1
+		modify(id number(15))
+		**修改工资增加初始值 使用default默认
+		modify
+		aler table emp1
+		modify(salary number(20,2)default 2000) 长度20 两位小数点默认工资2000
+		数据类型也是可以修改的。前提是这个列没有数据
+		**删除drop column
+		aler table emp1
+		drop column email
+		**重命名一个列 rename column 老列名 to 新列名
+		aler table emp1
+		rename column salary to sal
+		这些操作是不可以回滚的  rollback  DML增删改是可以回滚的 DDL直接写入硬盘了。
+	删除表   drop table 表结构不在了
+		drop table emp2
+		truncate table emp2删除表数据 表结构还在  同样也是不能rollback的。
+	修改表名  rename emp2 to emp520
+		重命名表
+
+
+D:\oracle\admin\orcl\dpdump\data_dump_dir 
+在黑窗口 imp 用户名/密码@数据库名 file=dmp路径 full="y"
+
+imp px/px@ORCL file="d:\20151211.dmp" full="y" 这是我的。
+	
+
+公司框架使用struts1.1 sping2.5 hibernate3
+给数据库增加字段，每当插入一个数据 就会自动添加日期
+alter table bm_methods add sysdatestr varchar(40);insert into tbl_user(id,name,sysdatestr) values(idstr,namestr ,to_char(current_date,'yyyy-mm-dd hh24:mi:ss'));
