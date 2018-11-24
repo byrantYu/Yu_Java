@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans SYSTEM "my4.dtd">
+<!-- 约束跟限定的作用 。 -->
+<beans>
+	<import resource="">爱上大声地</import>
+	<!-- 
+		DTD 
+		分三种 。 
+		1.内部DTD  内部定义的规范只对当前的这个XML文件有效。
+	 -->
+	<!-- 
+		* 表示匹配 0 到n次 
+		+ 至少出现一次。 >= 1  可以是n个 。
+		? 表示 要么出现一次  要么不出现。   0 1
+	 -->
+	<import resource=""></import>
+	<bean id="a3">
+		<!--  ALT+/  自动提示 -->
+		<property name="" value=""/>
+	</bean>
+	<bean className="" id="a2">
+		<!-- C+S + / 注释代码。 -->
+		<!-- <field fieldName="哈哈"/> -->
+		<property name="" value=""></property>
+	</bean>
+	<haha className="" id=""/>
+	<haha className="" id=""/>
+	<haha className="" id=""/>
+	<haha className="" id=""/>
+	<haha className="" id=""/>
+	
+	<!-- (#PCDATA)  属性开启之后  使用自动提示  会默认当前标签 有结束标签 。 -->
+	<bb/>
+	
+	
+	</beans>

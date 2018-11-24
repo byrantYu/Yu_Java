@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT beans (import*,bean*,haha+,bb)>
+<!ELEMENT bean (property*|field*)>
+<!ELEMENT property (#PCDATA)>
+<!ELEMENT import (#PCDATA)>
+<!ELEMENT bb (#PCDATA)>
+
+<!ATTLIST bean id 			ID #REQUIRED
+			   className	CDATA #IMPLIED
+>	
+<!ATTLIST property name 	CDATA #REQUIRED
+			   	   value 	CDATA #REQUIRED
+>
+
+<!ATTLIST field fieldName CDATA #REQUIRED>
+<!ATTLIST import resource CDATA #REQUIRED>

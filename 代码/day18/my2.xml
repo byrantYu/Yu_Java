@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 没有任何约束 。你想怎么写就怎么写 。 -->
+<beans>
+	<!-- 可以用XML语言描述java中的类对象 。 -->
+	<!-- 什么叫元素 。   元素又叫标签又叫标记   。。。 beans  bean  property  统统都是元素 。 -->
+	
+	<!-- 标签都是已 <> 尖括号  开始    <haha> 开始标签  开始元素   </haha> 结束标签  结束元素 结束标记 。-->
+	
+	<!-- 语法要求  不允许交叉嵌套。 -->
+	<!-- 注释
+	
+		注释
+		
+		
+		注释
+	 -->
+	<a>
+		<b></b>
+	</a>
+	<a>哈哈哈</a>
+	
+	<!-- 称为空元素  -->
+	<hehe id="01" name="呵呵" age="12" color="red" />
+	
+	<!-- 
+		属性名称 =属性值  一般值可以用双引号或者单引号包裹 。最常用的就是双引号。 
+		属性名称不能包含 ; 空格   只能已字母开头。
+	 -->
+	<a id="01"  name="呵呵" age="12" color="red"></a >
+	
+	<bean id="bean1" classPath="com.igeek.bean.User">
+		<!-- 元素体 。 元素体可以是元素  也可以是文本 -->
+		<property name="uid" value="u001"></property>
+		<property name="userName" value="汤姆"></property>
+		<property name="password" value="tom123"></property>
+	</bean>
+	<bean id="bean2" classPath="com.igeek.bean.User">
+		<property name="uid" value="u001"></property>
+		<property name="userName" value="汤姆"></property>
+		<property name="password" value="tom123"></property>
+	</bean>
+</beans>

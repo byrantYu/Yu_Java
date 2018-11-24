@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 注释 -->
+<persons>
+	<!-- id 我们称为标签的属性 。  属性是键值的方式  。field 字段  Attribute 属性 -->
+	<person id="p001">
+		<name>张三</name>
+	</person>
+	<person id="p002">
+		<name>李四</name>
+	</person>
+	
+</persons>
+
