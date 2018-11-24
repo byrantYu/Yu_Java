@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+			.nav{
+				overflow: hidden;
+			}
+			.nav li{
+				float: left;
+				display: block;
+				margin-left: 50px;
+				list-style: none;
+				
+			}
+			a{
+				text-decoration: none
+			}
+			.clear{
+				/* 隐藏属性 。。*/
+				display: none;
+			}
+			div{
+				opacity:0.3
+			}
+		</style>
+	</head>
+	<body>
+		<ul class="nav">
+			<!-- 1.找到元素    2.跳转页面  3.触发JavaScript 4.发送邮件。outlook... -->
+			<li><a href="javascript:on(1)" >天涯杂谈</a></li>
+			<li><a href="javascript:on(2)" >蓬莱鬼话</a></li>
+			<li><a href="javascript:on(3)" >风流快活</a></li>
+		</ul>
+		<hr />
+		<div id="show1"   style="background-color: red;width: 500px;height: 300px;">
+			天涯有路你不走，地狱无门你自来投。
+		</div>
+		<div id="show2" class="clear" style="background-color: green;width: 500px;height: 300px;">
+			从前有一个女鬼。。。略略略略略略略略略略
+		</div>
+		<div id="show3" class="clear" style="background-color: gold;width: 500px;height: 300px;">
+			天机不可泄露。。。。谁离开大家分开了三等奖
+		</div>
+	
+		<img src="img/5.jpg" alt="牛死了。" />
+		<script type="text/javascript">
+			function on(num){
+				for(var i=1;i<=3;i++){
+					//通过id获得指定元素对象。
+					var divs = document.getElementById("show"+i);
+					divs.className="clear";
+				}
+				//传递过来是那个div  num 就是要显示的div的编号 。
+				var div = document.getElementById("show"+num);
+				div.className="";
+			}
+		</script>
+	</body>
+</html>

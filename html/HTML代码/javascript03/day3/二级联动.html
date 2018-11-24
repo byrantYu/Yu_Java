@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function on(obj){
+				//alert(obj);
+				var hb = ["武汉","孝感","黄石","荆州","宜昌"];
+				var hn = ["郑州","开封","洛阳","商丘","南阳"];
+				var province = new Array();
+				province[0]=hb;
+				province[1]=hn;
+				
+				//alert(province[0])
+				
+				var city = document.getElementsByName("city")[0];
+				city.options.length=0;
+				for(var i=0;i<province.length;i++){
+					if(obj==i){
+						//内循环遍历城市 添加城市标签。
+						for(var j=0;j<province[i].length;j++){
+							var optEle = document.createElement("option");
+							var textNode =document.createTextNode(province[i][j]);
+							optEle.appendChild(textNode);
+							city.appendChild(optEle);
+						}
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<select name="province" onchange="on(this.value)">
+			<option value="-1">--请选择--</option>
+			<option value="0">湖北</option>
+			<option value="1">河南</option>
+		</select>
+		<select name="city">
+			
+		</select>
+	</body>
+</html>

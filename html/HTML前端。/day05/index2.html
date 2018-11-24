@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#div1{
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left:100px;
+				top: 100px;
+				background-color: aqua;
+				
+			}
+			#div2{
+				width: 500px;
+				height: 500px;
+				position: absolute;
+				left:100px;
+				top: 100px;
+				background-color: red;
+				
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		
+		<a href="javascript:setDiv1Attr()" id="a1">div1</a>
+		<a href="javascript:setDiv2Attr()" id="a2">div2</a>
+		
+		<div id="div1" style="visibility:hidden;">
+			
+		</div>
+		<div id="div2" style="visibility:hidden;">
+			
+		</div>
+	
+	<script type="text/javascript">
+	
+		function setDiv1Attr(){
+			//修改 id值为 div1的属性。visibility
+			//alert("弹窗。");
+			var div1 = document.getElementById("div1");
+			//alert(div1.style.visibility); 拿到hidden属性值 。
+			div1.style.visibility="visible";
+		}
+		
+		function setDiv2Attr(){
+			var div2 = document.getElementById("div2");
+			div2.style.visibility="visible";
+		}
+	</script>
+	</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>伪类选择器</title>
+		<style type="text/css">
+			/*
+			 	link 指的就是超链接的原始状态。
+			 	hover 指的就是当鼠标移动过来时的状态。
+			 	active 当鼠标点击不松手的时候就是激活状态。
+			 	visited 访问过的。
+			 	
+			 	
+			 * */
+			a:link{
+				color: red;
+			}
+			a:hover{
+				/*color: navy;*/
+				color: aquamarine;
+			}
+			a:visited{
+				color: gold;
+			}
+			a:active{
+				color: green;
+			}
+			/*p:hover{
+				color: gold;
+			}
+			p:active{
+				color: red;
+			}*/
+			
+			/*当鼠标选中的时候，表示获得鼠标的焦点 。*/
+			input:focus{
+				background-color: red;
+			}
+			/*	-moz- 兼容火狐浏览器。  
+			 * 
+			 * 
+			 *
+			 * 
+			 *  */
+			p::-moz-selection{
+				background-color: orange;
+			}
+			/*伪对象选择器 。 作用是给选中的内容添加特效。*/
+			P::selection{
+				color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<a href="http://www.baidu.com">百度</a>
+		<a href="http://www.zhanqitv.com">战旗TV</a>
+		
+		<p>收电费款蓝色的减肥了开始大家</p>
+		
+		<input type="text" maxlength="10" size="100" placeholder="请输入商品。。。" />
+	</body>
+</html>

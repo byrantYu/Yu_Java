@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//当页面加载完成时  会去触发这个方法 。  一个页面只能有一个window.onload...
+			window.onload = function() {
+				//				alert("a")
+				//获得元素   Elements  一旦 加s 就一定是数组 。  
+				var spans = document.getElementsByTagName("span"); //获取span对象的数组
+				//				alert(spans);  Collection  getElementsXxxxx 拿到的一定是一个集合(数组)
+				var span = spans[0];
+				//注意 ： 拿到的数组 一定不能直接操作 。需要先将数组变成具体的html对象。
+				span.innerText = "<a href='http://www.baidu.com'>百度</a>";
+
+				//HTML 代表 Html文本或者文档 。
+				//Text 纯文本。
+
+			}
+			//			window.onload=function (){
+			//				alert("b")
+			//			}
+			//			window.onload=function (){
+			//				alert("c")
+			//			}
+			function on() {
+				// console 控制台 对象    log() 向控制台输出内容。
+				console.log("哈哈");
+			}
+		</script>
+	</head>
+
+	<body>
+		<span></span>
+		<button onclick="on()">点我</button>
+	</body>
+
+</html>

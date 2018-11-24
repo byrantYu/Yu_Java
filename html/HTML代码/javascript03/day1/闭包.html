@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function on() {
+				var btnList = document.getElementsByName("btn");
+				var len = btnList.length;
+			/*	
+			 * for(var i = 1; i <= len; i++) {
+					//alert(i);
+					btnList[i-1].onclick = function() {
+						alert("你点了第" + i + "个按钮!")
+					}
+				} 
+			*/
+			}
+		</script>
+	</head>
+
+	<body>
+		<button name="btn" onclick="on()">test1</button>
+		<button name="btn" onclick="on()">test2</button>
+		<button name="btn" onclick="on()">test3</button>
+		<button name="btn" onclick="on()">test4</button>
+	</body>
+	<!--
+		关于JS闭包 。
+		1.https://www.cnblogs.com/JIANGCHEN520/p/7118656.html
+		2.https://www.cnblogs.com/zhuzhenwei918/p/6131345.html
+	-->
+</html>

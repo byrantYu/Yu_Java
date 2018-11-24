@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.selected1 {
+				font-size: 50px;
+			}
+			
+			.selected2 {
+				color: red;
+			}
+		</style>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				$("p").addClass("selected1"); //添加单一样式。
+				//$("p").addClass("selected1 selected2");
+			});
+			$(function() {
+				//方法的返回值 作为需要添加的样式。
+				$('ul li:last').addClass(function() {
+					//index() 方法 返回该元素在同辈元素中的下标。从0开始。
+					return 'item-' + $(this).index();
+				});
+			});
+			//删除样式
+			$(function() {
+				// removeClass(); 移除所有样式。
+				$("p").removeClass("selected");
+			})
+
+			$(function() {
+				$('li:last').removeClass(function() {
+					return $(this).prev().attr('class');
+				});
+			})
+			
+			$(function (){
+				$("button").click(function (){
+					$("#p1").toggleClass("selected1");
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<ul>
+			<li>Hello</li>
+			<li>Hello</li>
+			<li>Hello</li>
+		</ul>
+
+		<p>离开圣诞节</p>
+		
+		<p id="p1">我会切换样式。</p>
+		<button>点我切换样式</button>
+	</body>
+
+</html>

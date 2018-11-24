@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS(DOM)对象,Jquery对象</title>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function (){
+				$("#btn1").click(function (){
+					
+					//Jquery对象。  通过id选择器拿到的是一个jquery 对象 。
+					//在声明变量的时候 可以指定 。  $变量名称   来表示当前对象是一个jQuery对象。 其中$可以省略。
+					var $jqueryObject = $("p");
+					alert($jqueryObject.html());
+					// 由于当前对象是jquery对象。innerHTML为JS对象中的属性所以获取不到值。
+					//alert(jqueryObject.innerHTML)
+					// 通过一下两种方式 可以将Jquery对象转换成js对象。
+					// 1. $JqueryObjectName[0];  指定第几个元素 
+					// 2. $JqueryObjectName.get(0); 调用get方法。
+					var jso = $jqueryObject.get(0);
+					alert(jso.innerText)
+					
+				})
+			});
+			
+			$(function (){
+				$("#btn2").click(function (){
+					//那么如何将js对象转换成Jquery对象呢 ？
+					var p1 = document.getElementById("p1");
+					//我们直到此时p1 对象肯定是JS对象 。
+					//此时的p1对象只能调用JS中的属性跟方法。
+					//将当前对象转换成一个jquery对象。
+					var $pp = $(p1);
+					alert($pp.text());
+				})
+			});
+			// 关于JS对象JQ对象的区分记住:
+			//JS对象只能调用JS中的属性跟方法。
+			//Jqeuery对象只能调用JQ中的属性跟方法。
+		</script>
+	</head>
+	<body>
+		<p value="我是value属性。"><font color="red">嘻嘻</font></p>
+		<p id="p1">拉克丝爱我</p>
+		<button id="btn1">点我1</button>
+		<button id="btn2">点我2</button>
+	</body>
+</html>

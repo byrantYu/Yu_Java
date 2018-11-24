@@ -1,0 +1,6 @@
+p {
+	/* 样式中注释的写法 、提高复用性 ，降低代码的耦合度。*/
+	color: orange;
+	font-family: "微软雅黑";
+	font-size: 100px;
+}

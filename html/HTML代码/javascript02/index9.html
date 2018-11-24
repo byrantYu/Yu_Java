@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function testUser(obj){
+				//alert(obj.value);
+				var span = document.getElementById("username");
+				if(obj.value==""||obj.value==null){
+					span.innerHTML="<font color='red'>请输入用户名</font>"
+				}
+			}
+			function check(){
+				
+				//
+				return false;
+			}
+			
+			//通过这种方式  也可以获得元素对象 。
+			document.forms["form1"]["username"]
+			
+		</script>
+	</head>
+	<body>
+		<form name="form1" action="index8.html" method="post" >
+			<table border="1" >
+				<tr><th>注册</th></tr>
+				<tr>
+					<td>账号:<input name="username" type="text" onblur="testUser(this)"/></td>
+					<td><span id="username"></span></td>
+				</tr>
+				<tr>
+					<td>密码:<input type="text" onblur="testPass()"/></td>
+					<td><span id="password"></span></td>
+				</tr>
+				<tr>
+					<td><input type="submit" value="注册" /></td>
+					<td><a href="http://www.baidu.com" onclick="check()">点我</a></td>
+				</tr>
+			</table>
+		</form>
+		
+		<form name="myForm" action="demo_form.asp" onsubmit="return validateForm()" method="post"> 
+First name: <input type="text" name="fname"> 
+<input type="submit" value="Submit"> 
+</form>
+	</body>
+</html>

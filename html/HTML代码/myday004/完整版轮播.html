@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>轮播</title>
+		<style type="text/css">
+			.imgs {
+				width: 800px;
+				height: 800px;
+				/*position: relative;*/
+				float: left;
+				position: absolute;
+				left: 150px;
+				/*top:150px;*/
+			}
+			
+			.left {
+				margin-left: 0px;
+				margin-top: 200px;
+				position: absolute;
+				left: 0px;
+				top: 100px;
+				display: none;
+			}
+			
+			.right {
+				margin-right: 0px;
+				margin-top: 200px;
+				position: absolute;
+				right: 0px;
+				top: 100px;
+				display: none;
+			}
+			.qiehuan a{
+				/*首先要把这个超链接变成一个块元素  。 可以设置宽高*/
+				display: block;
+				width: 50px;
+				height: 20px;
+				background-color: red;
+				float: left;
+				margin-left: 50px;
+			}
+			.qiehuan{
+				position: absolute;
+				top: 550px;
+				left: 200px;
+			}
+			.qiehuan a:hover{
+				background-color: #FFAABB;
+			}
+			/* 
+			    display 属性   none   一旦设置这个值 。当前元素会被隐藏掉。
+			    display:block 把当前元素换成一个块元素 。 
+			    display:inline 把当前元素换成一个内联元素 。
+			    
+			    块元素  (block) 独占一行 。  div   p   
+			  内联元素 (inline)  给多少占多少。 span 
+			 * 
+			 * */
+		</style>
+	</head>
+	
+	<body>
+		<div class="imgs">
+
+			<div class="left">
+				<a href="#" class="img_a"><img src="img/3.png" height="80px" width="20px" onclick="left()" /></a>
+			</div>
+
+			<div class="right">
+				<a href="#" class="img_a"><img src="img/4.png" height="80px" width="20px" onclick="right()" /></a>
+			</div>
+
+			<!--
+            	这个是轮播图片的背景div...
+            	
+            	id 
+            	name
+            	class 
+            	
+            	初次之后 程序员 还可以自己定义属性名称跟值。
+            	对于自定义的属性值。如何获得 ？
+            	元素对象.getAttribute();
+            	
+            	如何设置值 ？
+            	setAttribute("属性名称","属性值");
+            -->
+			<div class="imgdiv">
+				<img id="img1" src="img/3.jpg" sb="3" width="800px" height="600px" />
+			</div>
+
+			<div class="qiehuan">
+				<a href="#" onmouseover="test(1)"></a>
+				<a href="#" onmouseover="test(2)"></a>
+				<a href="#" onmouseover="test(3)"></a>
+				<a href="#" onmouseover="test(4)"></a>
+			</div>
+		</div>
+
+		<script type="text/javascript">
+			//  获得元素的句柄  。    活动元素对象 。   img 对象。里面就封装了这个标签的所有信息 。
+			var img = document.getElementById("img1");
+
+			function left() {
+				//				alert("往左点了。");
+				//切换图片 。
+				//				var nn = img.sb;
+				var nowNum = img.getAttribute("sb");
+				if(nowNum > 1) {
+					nowNum--;
+					img.src = "img/" + nowNum + ".jpg";
+					img.setAttribute("sb", nowNum);
+				}
+//				return nowNum;
+			}
+
+			function right() {
+				//				alert("往右点了。");
+				var nowNum = img.getAttribute("sb");
+				if(nowNum < 4) {
+					nowNum++;
+					img.src = "img/" + nowNum + ".jpg";
+					img.setAttribute("sb", nowNum);
+				}
+			}
+			
+			function test(n){
+//				alert(n);
+				img.src="img/"+n+".jpg";
+				img.setAttribute("sb",n);
+			}
+			
+			//自动轮播 。  setTimeout("方法名称",时间间隔)
+			//JS 定时器的几种写法。
+			//改变方法 。
+			function change(n) {
+				if(n > 4) n = 1;
+				/*sb 自定义属性的作用 标注当前图片是第几张。*/
+				img.setAttribute("sb", n);
+				img.src = "img/" + n+ ".jpg";
+				n++;//图片要自增。
+				//3秒之后 再去调用change...
+				setTimeout("change(" + n + ")", 3000);
+			}
+			//window.onload 表示页面加载完成时  触发一个方法。
+			window.onload = function() {
+				//设置定时器 。 3000 毫秒 。 
+				setTimeout("change(1)", 3000);
+			}
+		</script>
+	</body>
+
+</html>

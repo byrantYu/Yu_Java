@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			body {
+				font-size: 13px;
+				line-height: 130%;
+				padding: 60px;
+			}
+			
+			#content {
+				width: 220px;
+				border: 1px solid #0050D0;
+				background: #96E555;
+			}
+			
+			span {
+				width: 200px;
+				margin: 10px;
+				background: #666666;
+				cursor: pointer;
+				color: white;
+				display: block;
+			}
+			
+			p {
+				width: 200px;
+				background: #888;
+				color: white;
+				height: 16px;
+			}
+		</style>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//事件的冒泡: 什么是事件的冒泡
+				$("body").click(function() {
+					alert("body click");
+					
+				});
+
+				$("#content").click(function() {
+					alert("div click");
+					
+				});
+
+				$("span").click(function(event) {
+					
+					alert("span click");
+					//1.如何解决事件的冒泡: 通过在响应函数的结尾返回 false, 可以阻止冒泡.
+					//2.调用stopPropagation();方法。
+					
+					//return false;
+					//event.stopPropagation();
+					
+				});
+
+				$("a").click(function(event) {
+					
+					return false;//既可以阻止浏览器默认行为 也可以防止事件冒泡。
+					//event.preventDefault();
+					//注意： 一旦添加return false后  后面的代码将无效。  可以将代码写到上方。
+					$("#log2").text("哈哈哈会受到");
+				})
+			});
+			
+			$(document).bind('mousemove', function(e) {
+				$("#log").text("e.pageX: " + e.pageX + ", e.pageY: " + e.pageY);
+			});
+		</script>
+	</head>
+
+	<body>
+		<div id="content">
+			外层div元素
+			<span>内层span元素</span> 外层div元素
+		</div>
+
+		<div id="log"></div>
+		<div id="log2"></div>
+		<div id="msg"></div>
+
+		<br><br>
+		<a href="http://www.hao123.com">WWW.HAO123.COM</a>
+	</body>
+
+</html>

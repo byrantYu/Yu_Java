@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			// html 表单元素  。input 开头 。
+			/*$(document).ready(function() {
+				var input = $(":checkbox");
+				alert(input.length)
+			});*/
+			/*$(function(){
+				
+			});
+			$(document).ready(function(){
+				
+			});*/
+			$(function (){
+				// nth-child  1  even 偶数  odd 奇数。
+				var arrays = $("ul li:nth-child(odd)");
+				alert(arrays.length)
+			});
+		</script>
+	</head>
+
+	<body>
+
+		<ul id="ul1">
+			<li>John</li>
+			<li>Karl</li>
+			<li>Brandon</li>
+		</ul>
+		<ul>
+			<li>Glen</li>
+			<li>Tane</li>
+			<li>Ralph</li>
+		</ul>
+
+		<form>
+			1<input type="button" value="Input Button" /> 
+			2<input type="checkbox" /> 
+			3<input type="file" /> 
+			4<input type="hidden" />
+			5<input type="image" /> 
+			6<input type="password" /> 
+			7<input type="radio" /> 
+			8<input type="reset" /> 
+			9<input type="submit" /> 
+			10<input type="text" /> 
+			11<select>
+				<option>Option</option>
+			</select>
+			12<textarea></textarea> 
+			13<button>Button</button>
+		</form>
+		
+	</body>
+
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	
+		<!--
+        	作者：offline
+        	时间：2018-09-25
+        	描述：
+        	ol 有序列表 。
+        	li 就是列表中的元素 。
+        	
+        	ul 无序列表。
+        	
+        	table 表示表格 。  border 指定表格是否带有边框。
+        	
+        	tr 称为行    td 就是列 。
+        -->
+		<ul>
+			<li>苹果</li>
+			<li>香蕉</li>
+			<li>橘子</li>
+		</ul>
+		
+		<table border="1px" >
+			<tr>
+				<th>id</th>
+				<th>name</th>
+				<th>age</th>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>张全蛋</td>
+				<td>20</td>
+			</tr>
+			<tr>
+				<td>002</td>
+				<td>李小花</td>
+				<td>21</td>
+			</tr>
+			<tr>
+				<td>003</td>
+				<td>张无忌</td>
+				<td>22</td>
+			</tr>
+		</table>
+		
+		<!-- 
+			HTML骨架 。  CSS精装修。
+			
+			html 中  有三个自定义属性 。(开发人员自己指定的 。)
+			id  (全局唯一。)   JavaScript 来使用.
+			name (他们都是可以重复,一般给一组事物起一个名字。) 后台的java程序 。
+			class (他们都是可以重复,一般给一类事物起一个共同的名字。) 给CSS样式。
+			
+			form 表单 。
+			from ...SQL 
+			
+			data 数据
+			date 日期
+			
+			form 表示表单  
+				action 属性表示表单提交的路径或者请求。
+				method 表示表单的提交方式 。 post表示隐式提交 。get表示显示提交。
+			
+			input 元素 表示输入 。根据type属性的值不同。 input标签表示的属性也不一样。
+			type="text" 这个是input 标签中的默认值。
+			text 文本框
+			password 密码框。
+			
+			
+			(按钮三剑客。)
+			submit提交按钮 。
+			onclick 鼠标单击时触发。
+			（特殊，可以写form外面。）button普通按钮。没有任何效果(用来触发javascript事件。)
+			reset 按钮。重置的意思 。
+		-->
+		<form action="" method="post">
+			<input type="hidden" value="我是用来存放数据的。" />
+			<input type="text" size="50" maxlength="8" value="我初始化值。" />
+			<br />
+			<input type="password"  />
+			<input />
+			
+			<!-- 复选框  checkbox 注意 一般使用复选框的时候  一定要加上name属性 用来标注是否是同一组。 -->
+			<input type="checkbox" name="fruit" />苹果
+			<input type="checkbox" name="fruit" />西瓜
+			<input type="checkbox" name="fruit" />橘子
+			<input type="checkbox" name="fruit" />大荔汁
+			<br />
+			<input type="checkbox" name="beauty" />柳岩
+			<input type="checkbox" name="beauty" />苍老师
+			<input type="checkbox" name="beauty" />李航老师
+			<input type="checkbox" name="beauty" />戢浪
+			
+			
+			<input type="file" />
+			
+			<!--
+            	作者：offline
+            	时间：2018-09-25
+            	描述： 
+            	textarea 
+            -->
+            
+            <textarea  rows="100" cols="200">
+            	文本域。
+            </textarea>
+			
+			<!-- 单选按钮 -->
+			<input type="radio" name="sex" />男
+			<input type="radio" name="sex" />女
+			<input type="radio" name="sex" />妖
+			
+			<input type="submit" value="注册&登陆"/>
+			<input type="reset" value="重置"/>
+		</form>
+		
+		<input type="button" value="点我触发JS"  onclick="sb(),sb2()"/>
+	
+	<script>
+		function sb(){
+			alert("谁让你点我了。。。滚。。。")
+		}
+		function sb2(){
+			var sb = "哈哈";
+			alert(sb);
+		}
+	</script>
+	<body>
+		
+</html>

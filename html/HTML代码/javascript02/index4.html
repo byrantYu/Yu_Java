@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function on(){
+				var a = "hello";
+				var b = new String("hello");
+				//自我纠正 。  = 号用在if中 就是 ==  7
+				// == 只是比较值是否相等，  ===(安全等)  除了比较值是否相等之外 还会比较对象的类型。
+				alert(typeof a);
+				alert(typeof b);
+				if(a==b){
+					alert("相等。。。")
+				}else{
+					alert("不相等。。。");
+				}
+				
+			}
+		</script>
+	</head>
+	<body>
+		<button onclick="on()">点我</button>
+	</body>
+</html>

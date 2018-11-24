@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				/*清除body 跟浏览器边框的距离 。*/
+				/*margin-left: 0px;
+				margin-top: 0px;*/
+				margin: 0px;
+			}
+			.box1{
+				width: 500px;
+				height: 500px;
+				border: 20px  red solid;
+				margin-left: 100px;
+			}
+			.box2{
+				width: 50px;
+				height: 50px;
+				/*background-color: red;*/
+				/*
+				 10 20 30 40  依次对应  上边框  右边框  下边框  左边框  （顺时针）
+				 10 20 30 依次对应  上边框    左右边框   下边框
+				 10 20   依次对应上下边框  左右边框。
+				 10  依次上下左右 。
+				  
+				  
+				 */
+				border-top: dashed;
+				border-color: green;
+				border-top-width: 2px;
+				padding-top: 30px;
+				/*border-style: dashed;*/
+			}
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1">
+			爱上姐姐
+		</div>
+		
+		<div class="box2">
+			
+			爱上了快点死开啦就看了时间
+		</div>
+	</body>
+</html>

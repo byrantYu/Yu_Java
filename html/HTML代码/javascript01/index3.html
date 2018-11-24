@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			//alert("护手霜");
+			//document.write("<p style='color: red;'>我是一个段落</p>");
+			//document.write("");
+			function on() {
+				var p1 = document.getElementById("demo");
+				//p1对象中 就封装了 id为demo的这个元素的所有信息 。
+				var inner = p1.innerText;
+				//innerHTML 是获取对象中的内容 包含html标签。
+				//innerText 只获取对象中的文本。
+				//window.alert(inner);
+				// window 内置对象 。
+				// 不用你声明 ，内嵌到当前页面中的对象 。直接写名字拿来使用。
+				// 对象. 就可以调用属性跟方法。   这种对象一般称为内置对象。
+
+				alert(Date());
+			}
+
+			function cn() {
+				//var ayyays1 = new Array();
+				//arryas1[0] = 1; //...
+				//var arrays = [1, 2, 43, 654, 23];
+				//name  age  phonenumber    chi  he  wan le 
+				var person = {
+					"name": "戢浪",
+					"age": "18",
+					"phoneNumber": "18001108760",
+					"chi":function (s){
+						//return "吃死你。。"+s;
+						alert( "吃死你。。"+s);
+					},
+					"he":function (){
+						//return "呵呵";
+						alert("呵呵");
+					}
+				};
+				//JSON JavaScript Object notation...
+				alert(person.age);
+				alert(person.name);
+				alert(person.phoneNumber);
+				person.chi('屎');
+				person.he();
+			}
+			
+			function en(){
+				
+				var lxh = {
+					"name":"李小花",
+					"age":"30",
+					"boyfriends":[
+						{
+							"name":"张全蛋",
+					 		"age":"20",
+					 		"chi":function(){
+					 			return "就会吃。"
+							}
+						},
+						{
+							"name":"戢浪",
+							"age":"18",
+							"he":function(sb){
+								return "就会喝"+sb; //"就会喝琼浆玉液"
+							}
+						}
+					
+					],
+					"email":"316416373@qq.com",
+					"wan":function(){
+						return "LOL";
+					}
+				}
+				
+				//var name = lxh.boyfriends[1].name;
+				var returnValue = lxh.boyfriends[1].he('琼浆玉液');
+				alert(returnValue);
+			}
+		</script>
+		<!--<script src="" type="text/javascript" charset="utf-8"></script>-->
+	</head>
+
+	<body onunload="alert('asdfsdf')">
+		<p id="demo"><span>收到了空间分离开谁记得</span></p>
+
+		<button onclick="en()">点我</button>
+	</body>
+
+</html>

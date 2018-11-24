@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			.movediv{
+				width: 50px;
+				height: 50px;
+				background-color: red;
+			}
+			input{
+				/*display: block;*/
+				width: 350px;
+				height: 90px;
+				font-size: 55px;
+			}
+		</style>
+	</head>
+		
+	<body>
+		<div class="movediv" style="position: absolute;left: 0px;top: 0px;">
+			
+		</div>
+		<div class="div1" onclick="on()">
+			鼠标位置x:<span id="x"></span>----y:<span id="y"></span>
+		</div>
+		<!--
+        	
+        	direction 滚动方向  可选值有 left, right, up and down。如果未指定值，默认值为 left。
+        	
+        	behavior 设置文本在 marquee 元素内如何滚动。可选值有 scroll，slide 和 alternate。 如果未指定值，默认值为 scroll。
+
+			loop 设置 marquee 滚动的次数。如果未指定值，默认值为 −1，表示 marquee 将连续滚动.
+      
+      		scrollamount 设置每次滚动时移动的长度（以像素为单位）。默认值为 6。
+
+			scrolldelay 设置每次滚动时的时间间隔（以毫秒为单位）。默认值为 85。请注意， 除非指定 truespeed 值，否则将忽略任何小于 60 的值，并改为使用 60。
+
+			truespeed 默认情况下，会忽略小于60的scrolldelay值。如果存在truespeed，那些值不会被忽略。
+        -->
+		<marquee direction="left" width="1000" height="100" behavior="alternate" style="border:solid">
+  
+    		浙江温州，浙江温州，浙江温州，江南皮革厂，倒闭了，倒闭了，王八蛋黄鹤，王八蛋黄鹤，带着小姨子跑路了！
+  
+		</marquee>
+		
+		<input type="text"  />
+		
+		<script type="text/javascript">
+			//var xspan = document.getElementById("x");
+			//var yspan = document.getElementById("y");
+			/*var movediv = document.getElementsByClassName("movediv")[0];
+			document.onmousemove=function (event){
+				
+				var x = event.screenX;
+				var y = event.screenY;
+				//xspan.innerHTML=x;
+				//yspan.innerHTML=y;
+				movediv.style.left=(x-25)+"px";
+				movediv.style.top=(y-91-25)+"px";
+				
+			}*/
+			function left(){
+				var i = 0;
+				
+				//0 
+			}	
+		</script>
+	</body>
+</html>

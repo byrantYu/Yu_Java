@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.imgdiv{
+				position: absolute;
+				left: 283px;
+				top:0px;
+			}
+			.qiehuan{
+				overflow: hidden;
+				position: absolute;
+				top: 550px;
+				left: 520px;
+			}
+			.qiehuan a:link{
+				display:block;
+				height: 5px;
+				width: 20px;
+				background-color: red;
+				float: left;
+				margin: 0px 0px 0px 50px;
+			}
+			.qiehuan a:hover{
+				display:block;
+				height: 5px;
+				width: 20px;
+				background-color: black;
+				float: left;
+				margin: 0px 0px 0px 50px;
+			}
+			.left{
+				height: 600px;
+				width: 120px;
+				/*background-color: #BBFFAA;*/
+				position: absolute;
+				left: 283px;
+				top: 260px;
+				z-index: 100;
+			}
+			.right{
+				height: 600px;
+				width: 120px;
+				/*background-color: #BBFFAA;*/
+				position: absolute;
+				left: 1063px;
+				top: 260px;
+				z-index: 100;
+			}
+			.left img:hover{
+				background-color: #BBFFAA;
+				opacity: 0.5;
+			}
+			.right img:hover{
+				background-color: #BBFFAA;
+				opacity: 0.5;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="imgs">
+			
+			<div class="left">
+				<a href="#" class="img_a"><img src="img/3.png" height="80px" width="20px" onclick="left()"/></a>
+			</div>
+			
+			<div class="right">
+				<a href="#" class="img_a"><img src="img/4.png" height="80px" width="20px" onclick="right()"/></a>
+			</div>
+			
+			<!--
+            	这个是轮播图片的背景div...
+            -->
+			<div class="imgdiv">
+				<img id="img1" src="img/3.jpg" sb="3" width="800px" height="600px"  />
+			</div>
+			
+			<div class="qiehuan">
+				<a href="#" onmouseover="test(1)"></a>
+				<a href="#" onmouseover="test(2)"></a>
+				<a href="#" onmouseover="test(3)"></a>
+				<a href="#" onmouseover="test(4)"></a>
+			</div>
+		</div>
+		
+		
+		<script type="text/javascript">
+			function test(imgNum){
+				//alert("哈哈!");
+				//实现图片的切换 。
+				var img = document.getElementById("img1");
+				img.src = "img/"+imgNum+".jpg";
+				//需要给自定义属性进行赋值操作。
+				img.setAttribute("sb",imgNum);
+			}
+			
+			function right(){
+				var img = document.getElementById("img1");
+				//imgNum = img.src.replace("http://127.0.0.1:8020/day07/img/","")[0];
+				var imgNum = img.getAttribute("sb");
+				if(imgNum<4){
+					imgNum++;
+					img.src="img/"+imgNum+".jpg";
+					img.setAttribute("sb",imgNum);
+				}
+				
+			}
+			
+			function left(){
+				/**
+				 * 如何知道下一张换谁 ？  
+				 * 	1.需要知道当前图片的序号 。
+				 * 	2.将当前的序列号-1 就是上一张的序列号。
+				 * 	3.只有当序列号>1的时候 才去做-1操作。
+				 */
+				//获得轮播背景的图片对象。
+				var img = document.getElementById("img1");
+				var nowImgNum = img.getAttribute("sb");
+				
+				//http://127.0.0.1:8020/day07/img/3.jpg
+				//alert(img.src);
+				//imgaddress表示拿到图片的地址 这个值是一个字符串类型。
+				//var imgAddress = img.src.replace("http://127.0.0.1:8020/day07/img/","");
+				//1.jpg  2.jpg 3.jpg  4.jpg
+				//alert(imgaddress);
+				//alert(typeof(imgaddress));
+				//拿到当前图片的序号。
+				//var nowImgNum = imgAddress[0];
+				//alert(nowImgNum);
+				if(nowImgNum>1){
+					nowImgNum--;//自身-1
+					//直接给图片赋值。
+					img.src="img/"+nowImgNum+".jpg";
+					//再把自定义属性添加上。
+					img.setAttribute("sb",nowImgNum);
+				}
+			}
+			
+			/* 一个页面只能有一个window . onload   表示当页面加载完成时  自动触发 = 号后面的方法。*/
+			window.onload=function (){
+				//var abc = "123";
+				//判断javascript中变量的数据类型  。  string 表示字符串 。  
+				//alert(typeof(abc));
+				//var parseNum = parseInt(abc);
+				//alert(typeof(parseNum));//number 数字。
+				
+			}
+			
+		</script>
+	</body>
+</html>

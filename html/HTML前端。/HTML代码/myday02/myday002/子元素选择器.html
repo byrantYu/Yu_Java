@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*h1 {
+				font-size: 16px;
+			}*/
+			
+			/*li:first-child {
+				color: red;
+			}*/
+			/*li:first-child {
+				color: red;
+			}*/
+			/* 注意 ： 当使用first-child的时候  如果跟跟其他选择器混合使用 需要注意
+			 * 
+			 * 表示找到 第一个子元素为 : 前指定的那个元素 。
+			 * 
+			 * 
+			 *  了解下 。
+			 * 	 比较绕。。。看的要试一下。
+			 *  */
+			/*body>p:first-child{
+				color: yellow;
+			}
+			body>p:last-child{
+				color: darkgoldenrod;
+			}*/
+			/* even 表示偶数  选择偶数元素  。  event 事件  。
+			 	odd 表示奇数。
+			 * */
+			/*li:nth-child(odd){
+				color: red;
+			}*/
+			/* 否定选择器  。表示在已经选择的基础之上，进行剔除。*/
+			P:not(.hello){
+				color: red;	
+			}
+		</style>
+	</head>
+
+	<body>
+		<h1>第二行要变成红色 <code>li:nth-child(2){color:#f00;}</code></h1>
+		<ul>
+			<li>收到了空间手动1</li>
+			<li>收到了空间的2</li>
+			<li>速度快了J打开3</li>
+			<li>收到了空间4</li>
+			<li>收到了空间活动5</li>
+		</ul>
+		<!--<span>速度快解放</span>-->
+		<p>我是苏打绿分开了打开一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<span>速度快了解</span>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+				<p class="hello">我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<p>我是一个p标签</p>
+		<!--<h1>注意是li:first-child，而不是ul:first-child</h1>
+		<ul>
+			<li>结构性伪类选<p>死定了开发接口</p>择符 E:first-child</li>
+			<li>结构性伪类选择符 E:first-child</li>
+			<li>结构性伪类选择符 E:first-child</li>
+			<li>结构性伪类选择符 E:first-child</li>
+		</ul>-->
+		
+		<!--<span>我是span</span>-->
+		
+		<!--<span>hello</span>-->
+		<!--<div>
+			<p>我是DIV中的p标签</p>
+		</div>-->
+	</body>
+
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				border: 10px solid red;
+				/*margin-left: 100px;
+				margin-top: 100px;*/
+				/*margin-right: 100px;*/
+				/*margin-bottom: 100px;
+				 
+				 注意： 当你加完这个之后，当前盒子位置不会改变。下面的盒子会向下移动。
+				 最终这个两个盒子的距离，就是margin-bottom这个值。
+				 * */
+				/*margin-left: -100px;*/
+				/*margin-left: auto;
+				margin-right: auto;
+				技巧 auto 代表自动 。
+				当同时设置 水平方向   （左右 ） 为auto的时候当前盒子会居中。
+				*/
+				margin-left: auto;
+				margin-right: auto;
+			}
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+			.box0{
+				width: 500px;
+				height: 500px;
+				border: gold solid 2px;
+				margin-left: 300px;
+				/**
+				 * margin:10px;  上左 外边距都是10px
+				 * margin:100px 200px; 如果可以的话 同时满足上下是100px，左右是200px。
+				 * 		如果不行的话，会已左边为主。
+				 * margin:100px 200px 300px; 如果可以的话  同时满足上100px,下是300px,左右是200;
+				 * 		如果不行的话，会已左边为主。
+				 * margin:100px 200px 300px 400px;
+				 * 	
+				 */
+				margin: 100px 200px 300px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box0">
+			<div class="box1"></div>
+		</div>
+		
+		<div class="box2"></div>
+	</body>
+</html>

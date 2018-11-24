@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>JS(DOM)对象跟JQuery对象的区别 。</title>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function (){
+				//绑定事件 。"选择器 "
+				$("#btn1").click(function (){
+					// 给按钮绑定一个鼠标单击事件 。
+					// DOM 对象  Jquery 对象 。  DOM对象跟JQuery对象可以互相转换 。
+					// dom 只能调用JS 中有的属性跟方法。
+					// Jquery 对象 只能调用jquery中的属性跟方法。
+					var $p = $("#p1");
+					//html()方法 就相当于  javascript中对象.innerHTML
+					//alert($p.html());
+					//alert($p.text());//相当于js中的对象.innerText
+					//alert($p.val());//value...  并不是所有标签都能设置value 的值 。
+					alert($p.attr("value"));//设置自定义属性的值 。setAttribute ...   getAttribute...
+					
+					//$p 在jQuery对象名称前面加一个$表示当前对象是一个jquery对象。
+					
+					
+					//Jquery对象如何转换成JS(DOM)对象？？ 
+					//1.$("#p1")[0]  ...
+					//2.$("#p1").get(0) ...第二种方法。
+				})
+			});
+			
+			$(function (){
+				var btn2= document.getElementById("btn2");
+				//btn2 ??? DOM对象 Jquery对象。
+				//alert(btn2.text());
+				//如何将DOM对象转换成Jquery对象。
+				var $btn = $(btn2);
+				alert($btn.text());
+			});
+		</script>
+	</head>
+	<body>
+		<p id="p1" value="我是value属性。"><font color="red">嘻嘻</font></p>
+		<p id="p2">拉克丝爱我</p>
+		<button id="btn1">点我1</button>
+		<button id="btn2">点我2</button>
+	</body>
+</html>

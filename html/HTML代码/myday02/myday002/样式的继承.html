@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				font-size: 30px;
+				/*根据样式的继承规则 ，一旦给最上层设定了样式 。 
+				 * 后代元素是会继承到这个样式的。
+				 * 
+				 * 背景相关的样式 不能被继承 ，背景图片 .
+				 * 边框 。 
+				 * 		定位相关 。
+				 * */
+			}
+			
+			div{
+				/*border: solid 1px red;
+				 bottom 底部   top 上面  left 左边 right 右边  (center 中间。) 
+				 * */
+				border-right:solid 1px red;
+			}
+		</style>
+	</head>
+	<body>
+		速度快了J打开了
+		<div style="color: red;">
+			收到了空间了空间
+			<p>收到了空间的了空间</p>
+		</div>
+	</body>
+</html>

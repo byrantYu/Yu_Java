@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				/*清楚默认样式。*/
+				margin:0px;
+				padding:0px;
+			}
+			.div1{
+				height: 100px;
+				/*padding-left: 100px;*/
+				/*padding-top: 100px;*/
+				border: 1px solid red;
+			}
+			.div2{
+				width:auto;
+				border: 1px blue solid;
+				/*padding-left: 100px;*/
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 
+			当元素的宽度的值为auto时，
+			此时指定内边距不会影响可见框的大小，
+			而是会自动修改宽度，以适应内边距。
+		-->
+		<!-- 
+			
+			
+			padding-top; 改变设置宽度为auto 的时候还是可以改变高度的。
+		-->
+		<div class="div1">
+			<div class="div2">撒点离开房间开了</div>
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>全选，全不选，反选</title>
+		<script type="text/javascript">
+			
+			
+			function selectAll(){
+				var sel = document.getElementById("all");
+				var fruit = document.getElementsByName("fruit");
+				//alert(sel.checked);
+				/*if(sel.checked){
+					for (var i=0;i<fruit.length;i++) {
+						fruit[i].checked=true;
+					}
+				}else{
+					for (var i=0;i<fruit.length;i++) {
+						fruit[i].checked=false;
+					}
+				}*/
+				for (var i=0;i<fruit.length;i++) {
+					fruit[i].checked=sel.checked;
+				}
+			}
+			function reverse(){
+				var fruit = document.getElementsByName("fruit");
+				
+				for (var i=0;i<fruit.length;i++) {
+					if(fruit[i].checked==true){
+						fruit[i].checked=false;
+					}else{
+						fruit[i].checked=true;
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="checkbox"  id="all" onclick="selectAll()" />全选
+		<input type="checkbox"  id="reverse" onchange="reverse()" />反选
+		<br />
+		苹果:<input type="checkbox" name="fruit" value="苹果" />
+		<br />
+		香蕉:<input type="checkbox" name="fruit" value="香蕉" />
+		<br />
+		橘子:<input type="checkbox" name="fruit" value="橘子" />
+		<br />
+		火龙果:<input type="checkbox" name="fruit" value="火龙果" />
+	</body>
+</html>

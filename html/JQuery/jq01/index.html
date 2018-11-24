@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<!--如何在页面中引用 JQuery...  
+			JQuery是一个javascript 类库 。
+			里面封装好了  各种方法，让你简化JS的开发。
+			1.在页面中引入Jquery。。。
+		-->
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			//正常的书写JS代码 。  也可以书写JQuery代码了。
+			//$() 相当于 window.onload...
+			/*			$(function (){
+							alert("A");
+						})
+						$(function (){
+							alert("B");
+						})*/
+			$(function() {
+				//???一定是一个数组 。$("button") 相当于 document.getElemetsByTagName("button");
+				//onclick   click 事件名称。
+				// onchange  change  当发生改变时触发 ，多用在下拉菜单 。
+				//on focus 获得焦点时触发 。 多用在输入框。
+				//on blur 失去焦点时触发 。 多用在输入框。
+
+				//$("button") Jquery选择器 。 选择器的作用是找到元素 。
+				//#btn1
+				/*$("button").click(function (){
+					alert("你点我了。");
+				})*/
+				/** 
+				 * 思考  JS对象JQ对象的区别 ？？？
+				 *   ID 选择器   #来表示  #btn1 表示找到一个id为btn1的元素 。找到的元素是一个jQuery对象 。
+				 *   CLASS 类别选择器 .haha 表示找到一组class值为haha的元素。
+				 *   ELEMENT 元素(标签选择器) p 表示找到所有的p元素  div 表示找到所有的div元素 。
+				 *   * 匹配所有元素 。 
+				 *   多层选择器  可以同时找到多个元素  button,p,span 多个元素之间使用,间隔 。 
+				 * 
+				 *   button,.p,#span1 表示找到所有的button元素 ，还有class值为p的元素，和id值为span1的元素。
+				 *   会把找到的结果作为一个数组存储起来 。
+				 *   
+				 *   存储元素的先后顺序 ，跟选择器的书写书写顺序无关。跟元素在页面中的位置有关。(了解。)
+				 *  
+				 *   div span  空格  后代选择器  div span 表示找到div 包括直接子元素跟间接子元素 。
+				 *   div > span  > 表示找到div 中的直接子元素 span (只找子元素。)
+				 *   span + p  表示找到紧跟着span元素的p元素。
+				 * 		$("#div1 > span + p")
+				 *   span ~ p 
+				 *   空格 表示找到所有的后代元素(包括子元素以及所有的后代)
+				 *   >  表示找到所有的直接子元素 。
+				 *   + 找到紧跟着的元素 。
+				 *   ~ 表示找到同级元素(只找到后面的同级元素。)。
+				 * 
+				 *   not(:checked) 
+				 * 
+				 *   :disabled 表示找到所有的禁用元素。
+				 *   :enabled 表示 所有的可用元素 。(没有disabled属性 。)
+				 *   :checked 表示找到所有被选中的元素 。(一般用在浮选框 单选按钮 。)
+				 *   :selected 表示找到所有被选中的元素 。(selected 一般用在下拉菜单 。)
+				 */
+				//
+				//var arrays1 = $("button,.p,#span1")[0];
+				//alert(arrays1);
+
+				var span = $("#div1 p:last");
+				//alert(span.length);
+				//alert(span[0].innerText);
+				//alert(span[1].innerText);
+			})
+			
+			
+			$(function (){
+				var div = $("div[class^='haha']");
+				alert(div.length)
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div class="haha1 haha2 haha3">
+			
+		</div>
+		
+		<div id="div1">
+			<p>asd</p>
+			<p>阿呆说分手的1</p>
+			<span>我是span1</span>
+			<span>我是span2</span>
+			<p>哈哈1</p>
+			<div>
+				<span>我是内部span1</span>
+				<p>哈哈2</p>
+				<span>我是内部span2</span>
+			</div>
+			<p>我是段落1</p>
+			<p>我是段落2</p>
+			<button class="btn" id="btn1">点我1</button>
+			<button class="btn">点我2</button>
+		</div>
+
+		<form>
+			<label>Name:</label>
+			<input name="name" />
+			<fieldset>
+				<label>Newsletter:</label>
+				<input name="newsletter" />
+			</fieldset>
+		</form>
+		<input name="none" />
+	</body>
+
+</html>

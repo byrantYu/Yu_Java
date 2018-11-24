@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				background-color: #bfa;
+			}
+			.box1{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			.s1{
+				/*position: absolute;
+				top: 300px;*/
+				/* 
+				 * 内联元素是无法设置宽还有高的。
+				 * width: 100px;
+				height: 100px;*/
+				
+				/*padding-left: 100px;
+				padding-right: 100px;*/
+				padding-top: 100px;
+				padding-bottom: 100px;
+				border: 1px blue solid;
+				
+				/*外边距  内联元素  可以设置水平方向的外边距 */
+				margin-left: 100px;
+				margin-right: 100px;
+				
+				/* 注意的地方：：内联元素不支持垂直外边距*/
+				margin-top: 300px;
+			}
+			.s2{
+				/*
+				 * 为右边的元素设置一个左外边距
+				 * 水平方向的相邻外边距不会重叠，而是求和
+				 */
+				margin-left: 100px;
+			}
+		</style>
+	</head>
+	<body>
+		<span class="s1">我是一个span</span>
+		<span class="s2">我是一个span</span>
+		<span>我是一个span</span>
+		<span>我是一个span</span>
+		<div class="box1"></div>
+	</body>
+</html>

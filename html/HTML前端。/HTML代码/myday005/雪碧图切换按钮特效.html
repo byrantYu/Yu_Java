@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.btn:link{
+				display: block;
+				width: 93px;
+				height: 29px;
+				background-image: url(img/btn2.png);
+				background-repeat: no-repeat;
+			}
+			.btn:hover{
+				background-position: -93px 0px;
+			}
+			.btn:active{
+				background-position: -186px 0px;
+			}
+			.btn{
+				position: absolute;
+				left: 100px;
+				top: 200px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<a class="btn" href="" onclick="on(this)"></a>
+		
+		<script>
+			function on(obj){
+				// 注意  obj 就代表了 你传入的this 。 this 又代表a标签 。
+				alert(obj);
+			}
+		</script>
+	</body>
+</html>

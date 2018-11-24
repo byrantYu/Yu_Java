@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.0.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				//id 选择器    $("#btn1") 找到的是唯一元素。
+				//class 类别选择器  $(".btn") 找到的是一个元素数组。
+				//element 元素选择器 $("p") 找到所有的p元素。
+				//selector1,selector2,selectorN $("div,span,p.myClass") 将匹配到的元素合并到一个结果中。
+
+				// 空格   form input 表示找到所有的后代元素。
+				// > form > input 只匹配子元素。
+				// + 紧跟着  label + input  紧跟着label的input 
+				// ~ 表示找到前一个元素后面的所有元素。 form ~ input 
+				
+				//属性选择器中的值。
+				// 
+				//^ 表示是否已指定内容开头
+				//$ 表示是否已指定内容结尾
+				// * 表示是否包含指定内容。
+				$("#btn1").click(function() {
+					var $results = $("div,span,p.myClass");
+					//找到元素的顺序是按照网页中元素的顺序。而不是按照选择器中的书写顺序。
+					$results.each(function(i) {
+						//此时 如果 不加$(this)方法 ，当前的this是一个js对象。
+						var text = $(this).text();
+						alert(i + "  " + text);
+					})
+
+				});
+			});
+		</script>
+	</head>
+
+	<body>
+		<div>div1</div>
+		<div>div2</div>
+		<p class="myClass">p class="myClass"</p>
+		<span>span</span>
+		<p class="notMyClass">p class="notMyClass"</p>
+		<hr />
+		<form>
+			<label>Name:</label>
+			<input name="name" />
+			<fieldset>
+				<label>Newsletter:</label>
+				<input name="newsletter" />
+			</fieldset>
+		</form>
+		<input name="none1" />
+		<input name="none1" />
+		<hr />
+		<button id="btn1">点我</button>
+	</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1 {
+				width: 200px;
+				height: 200px;
+				background-color: #bfa;
+				/*设置边框*/
+				border: 10px red solid;
+				padding-top: 50px;
+				padding-bottom: 50px;
+				padding-left: 50px;
+				padding-right: 50px;
+				/* 边框的上下高度+内边距的上下高度+实际高度。
+				 	20+100+200
+				 	
+				 	20+100+200   
+				 	
+				 	320px
+				 	
+				 	注意：当设置完内边距后,元素的背景会延伸到内边距
+				 * */
+				
+				margin-left: 100px;
+				margin-top: 100px;
+			}
+			
+			.box2 {
+				width: 100%;
+				height: 100%;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box1">
+			<div class="box2"></div>
+		</div>
+	</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			table{
+				width: 400px;
+				border: 1px black solid;
+				/*border-collapse: collapse;*/
+			}
+		</style>
+	</head>
+	<body>
+		<table border="1" align="center" width="40%">
+			<tr>
+				<!-- 在tr中需要使用td来创建一个单元格，有几个单元格就有几个td -->
+				<td>A1</td>
+				<td>A2</td>
+				<td>A3</td>
+				<td>A4</td>
+			</tr>
+			
+			<tr>
+				<td>B1</td>
+				<td>B2</td>
+				<td>B3</td>
+				
+				<!-- 
+					rowspan用来设置纵向的合并单元格
+				-->
+				<td rowspan="2">B4</td>
+			</tr>
+			<tr>
+				<td>C1</td>
+				<td>C2</td>
+				<td>C3</td>
+			</tr>
+			<tr>
+				<td>D1</td>
+				<td>D2</td>
+				<!-- 
+					colspan横向的合并单元格
+				-->
+				<td colspan="5">D3</td>
+			</tr>
+		</table>
+	</body>
+</html>

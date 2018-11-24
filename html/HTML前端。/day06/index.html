@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		
+	<p id="p1"></p>
+	<form action="" method="post">	
+		<!--
+        	表单中的按钮三贱客 。  submit 提交   reset 重置     button 没用 。
+        	button 主要用来触发javascript事件。
+        -->
+        
+        <input style="width: 200px;height: 80px;border: 1px solid red;" type="text" placeholder="搜索..." />
+		<input type="submit" id="sb1" value="注册哈哈"/>
+		<input type="reset" value="重置呵呵" />
+		<input type="button" value="点我触发JS" />
+		<br />
+		<hr />
+		<button class="btn" type="button" onclick="on()">点我触发js2</button>
+		<button class="btn" type="reset">重置</button>
+		<button class="btn" type="submit">注册</button>
+	</form>
+	<script type="text/javascript">
+		//单行注释    document 文档对象  。 write 就是对象中方法  作用是向浏览器输出指定内容。
+		//document.write("<h1>这是我的第一个页面</h1>");
+		
+		function on(){
+			//alert("你好!");
+			var p = document.getElementById("p1");
+			p.innerHTML="你好，这是我插入的内容！";
+			//通过标签名称来获得对象 。得到是一个对象数组 。  作用是通过标签名称来获得JS对象。
+			var inputs = document.getElementsByTagName("input");
+			//获得对象第三种方式 。通过class值来获得。
+			for(var i=0;i<inputs.length;i++){
+				//""  null  并不相等 。
+				if(inputs[i].id!=""){
+					alert(inputs[i].value+inputs[i].id);
+				}else{
+					alert("这个家伙没id不管了。")
+				}
+				
+			}
+			
+			bn();
+		}
+		
+		function bn(){
+			var btns = document.getElementsByClassName("btn");
+			for(var i=0;i<btns.length;i++){
+				btns[i].innerHTML="sb";
+			}
+		}
+	</script>
+	</body>
+</html>

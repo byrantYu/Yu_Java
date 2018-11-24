@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--如何引入外部的JS文件。-->
+		
+	</head>
+	<script src="js/test.js" type="text/javascript" charset="utf-8"></script>
+	<body>
+		<!--  
+			
+			JS的三种写法 。 行内JS  .
+			1. 事件的内部是JS 代码 。 不推荐这么写。
+			onclick="var x = 10; alert('哈哈'+x)"> 
+				2. 使用script 标签 。
+				3. 引用外部的JS 。
+		-->
+		<button onclick="cn()">点我</button>
+		
+		<script type="text/javascript">
+			function on(){
+				var x = 10; 
+				alert('哈哈'+x)
+			}
+		</script>
+	</body>
+
+</html>

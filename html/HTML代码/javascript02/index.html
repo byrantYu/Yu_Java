@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script src="js/myjs.js" type="text/javascript" charset="utf-8"></script>
+		
+	</head>
+	<body>
+		<!--js的三种写法 。
+			
+			1.JS代码 跟 HTML代码 耦合 。
+				 onclick="alert('我是弹窗的提示内容。')"
+			2.使用script 标签 。
+				<script type="text/javascript">
+					function  on(){
+						alert("点我。");
+					}
+				
+				onclick="on()
+			3.使用外部的JS。
+		</script>
+		-->
+		
+		<button onclick="on()">点我</button>
+		<script type="text/javascript">
+//			alert("哈哈");
+			//wan();
+			//JS 内置内对象 。  JSP...
+			//  不用你去声明  ，  直接使用对象名称 . 就可以调用属性跟方法。document文档对象。
+			document.write("<font color='red' size='40px'>哈哈哈手动</font>");
+		</script>
+	</body>
+</html>

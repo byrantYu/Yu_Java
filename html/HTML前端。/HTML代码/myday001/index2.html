@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>LOL英雄联盟。</title>
+		
+	</head>
+	
+	<body>
+		<!--
+        	id 属性 表示指定标签的id属性值 ，这个属性值是程序员 自己定义的。
+        -->
+		<a id="a1" href="#">顶部</a>
+		<!--
+        	h1 最大
+        	h6 最小 。
+        	
+        	p 称为标签。 段落标签 。
+        	p 使用p 可以给文字添加特效 。
+        	
+        	style 我们称为 元素的属性。  样式 。
+        	color font-size   px .像素。
+        	
+        	元素    元素的属性 。
+        	
+        	不同的元素表示不同的意思。
+        	h1 元素   表示一个标题 。
+        	p 元素  表示一个段落 ，当然不加任何标签的文字效果一样。
+        	a 元素   
+        		***1.表示超链接 
+        		***2.跳转到指定位置
+        		***3.触发javascript事件
+        		4.发送邮件。  <a href="mailto:316416373@qq.com">发送邮件</a>
+        -->
+		<h1>今日限定打折。</h1>
+		
+		哈斯的空间发挥上来看大家
+		<p  style="color: red;font-size: 50px;">收到了空间风华绝代</p>
+		<hr color="blue"/> 
+		<!--
+        	作者：offline
+        	时间：2018-09-25
+        	描述：a 表示 表示超链接 。
+        		href 属性 表示超链接跳转的路径。
+        		 指定 你要跳转的Url ... 路径 。
+        -->
+		<a href="http://www.baidu.com">点我。。。</a>
+		<br>
+		<!--
+        	<br /> 自闭和的元素 。<br> 表示换行 。
+        	大部分元素 都是有开始标签有结束标签的。
+        	
+        	target 表示指定开启超链接的方式 。
+        	
+        	_blank 表示新窗口打开 。  
+        	
+        	对于html标签而言  很多标签的属性都是有默认值的。 target 属性 。默认值就是_self...
+        -->
+		<a href="http://www.douyutv.com" target="_blank">斗鱼Tv</a>
+		
+		
+		<a href="#a1">点我回到顶部</a>
+		<br/>
+		<a href="javascript:on(10,20)">点我触发js</a>
+		<br />
+		
+		<!--
+			学习html 其实就是学习  标签 ，跟标签属性所代表的意思。
+			
+        	作者：offline
+        	时间：2018-09-25
+        	描述： 
+        	img 表示图片 。
+        		src 表示图片的路径。
+        		alt 当图片挂掉的时候 ，会显示alt属性中的提示内容。
+        		title 属性  。 当鼠标移动到图片上的时候 。就会显示title中的内容。
+        -->
+		<img id="img1" src="img/4.jpg" alt="图片挂了。。。" title="这是一头老牛。" width="300px" height="300px"/>
+		
+		<!-- bottom 底部。 -->
+		<sub>下标字</sub>正常文字<sup>上标字</sup>
+		
+		<hr color="blue"/> 
+		
+		&lt;a&gt;
+		&copy; 
+		<hr color="red"/>
+		
+		下拉菜单。
+		
+		<!--
+        	select 下拉菜单  
+        	multiple 展开下拉菜单。
+        	selected 被选中的 。
+        	
+        	html中有些标签的属性比较特殊 。没有值 。 加上这个属性就有这个属性所对应的效果。
+        	、
+        	
+        	disabled 表示禁用 。 
+        -->
+		你喜欢的女性: 
+		<select disabled>
+			<option>柳岩</option>
+			<option >范冰冰</option>
+			<option>苍老师</option>
+		</select>
+	</body>
+	<script type="text/javascript">
+		//方法函数的意思 。
+		/*
+		 * 访问权限修饰符 + 返回值类型 + 方法名称(参数列表) { 方法体 }
+		 * 
+		 * JS中声明方法的格式 。
+		 * function 方法名称(参数列表。)
+		 * */
+		function on(a,b){
+			alert("我是网页的弹窗。"+(a+b));
+		}
+	</script>
+</html>

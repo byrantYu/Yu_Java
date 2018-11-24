@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			/*$(function(){
+							//
+							var options = $("option:not(:selected)");
+							//alert(options.length);
+							for(var i=0;i<options.length;i++){
+								alert(options[i].innerHTML);
+							}
+						})*/
+
+			/*$(function() {
+				var fruit = $("input[name='fruit']:not(:checked)");
+				//alert(fruit.length)
+				//each 相当于循环。
+				fruit.each(function(i) {
+					var text1 = $(this).val();
+					alert(i + " " + text1);
+				});
+			})*/
+			
+			/*$(function (){
+				//Element Query 元素查询 
+				//eq 表示找到指定的元素 。 元素的下标从0开始1...
+				//even 偶数  event 事件。
+				var tr = $("tr:eq(1)");
+				//alert(tr.innerHTML);
+				alert(tr.length)
+			});*/
+			
+//			$(function(){
+//				var trs = $("tr:odd");
+//				alert(trs.length)
+//			})
+			
+			//contains() 包含   div:contains('haha') 找到div标签中 包含哈哈的。
+			// <div>hhe</div><div>haha</div><div>sd haha sd</div>
+			
+			//empty 属性 空  。判断元素是否为空 。
+			
+			//has() div:has('p') 表示找到包含p元素的div...
+			
+			//:parent 属性  表示    td:parent 表示找到所有是父元素的td ... 如果td中没有内容那么这个td不是一个父元素。
+			
+			//:visible 属性  表示查找可见元素 
+			//:hidden 属性  表示查找所有的隐藏元素 
+			
+			
+			//input[type='text'] 表示找到所有的输入框  。
+			//input[type!='text'] 表示找到除了文本框之外所有的表单元素。
+			// div[class^='haha'] 表示找到所有的div 并且class值已 haha 开头。
+			// div[class$='haha']  表示找到所有的div 并且class值已 haha 结尾。
+			//div[class*='haha'] 表示找到所有的div 并且class值 包含 haha。
+		</script>
+	</head>
+		
+	<body>
+		<select name="" multiple>
+			<option value="">苹果</option>
+			<option value="" selected>橘子</option>
+			<option value="" selected>香蕉</option>
+			<option value="">火龙果</option>
+		</select>
+
+		<input type="checkbox" name="fruit" value="pt" checked />葡萄
+		<input type="checkbox" name="fruit" value="香蕉" />香蕉
+		<input type="checkbox" name="fruit" value="ll" checked />榴莲
+		<input type="checkbox" name="fruit" value="山竹" />山竹
+        &lt;a&gt;
+        <!--   &lt;<      >&gt;   -->
+		<table>
+			<tr>
+				<td>Header 1</td>
+			</tr>
+			<tr>
+				<td>Value 1</td>
+			</tr>
+			<tr>
+				<td>Value 2</td>
+			</tr>
+		</table>
+	</body>
+
+</html>

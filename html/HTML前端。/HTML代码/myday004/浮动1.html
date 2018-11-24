@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 100px;
+				height: 100px;
+				background: red;
+				border: 1px solid red;
+				/*float: right;*/
+			}
+			.box2{
+				width: 100px;
+				height: 100px;
+				background: green;
+				border: 1px solid red;
+				float: left;
+				margin-right: 100px;
+			}
+			.box3{
+				width: 100px;
+				height: 100px;
+				background: gold;
+				border: 1px solid red;
+				float: left;
+				/*margin-left: 100px;*/
+				
+			}
+			/*
+			 	什么时候不浮动  直到碰到非浮动元素的边框。 就不浮动了。
+			 
+			 * */
+			/*高度塌陷 。*/
+		</style>
+	</head>
+	<body>
+		
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<p>收到了空间手动了</p>
+	</body>
+</html>

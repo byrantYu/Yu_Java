@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="index.html" method="post">
+			
+			<fieldset id="">
+				<legend>用户</legend>
+				<label>用户名</label>: <input type="text" class="input" placeholder="请输入内容..." name="loginName" maxlength="10" size="15" />
+				<br />
+				<label>密码</label>: <input type="password" class="input" name="pwd" size="15" />
+			</fieldset>
+			
+			<input type="checkbox" name="gender" />男
+			<input type="checkbox" name="gender"  checked/>女
+			<input type="checkbox" name="gender" />妖
+			<select name="" multiple>
+				<optgroup label="女明星">
+					<option value="jl">戢浪</option>
+					<option value="mm" selected>咪咪</option>
+					<option value="zyq">张雨绮</option>
+				</optgroup>
+				<optgroup label="男朋友">
+					<option value="jl">戢浪</option>
+					<option value="mm">妖</option>
+					<option value="zyq">张全蛋</option>
+				</optgroup>
+			</select>
+			<!--
+				
+				disabled 禁用 
+				selected 被选中的
+				checked 被选中的。
+				(multiple 展开的)
+			-->
+			<input type="submit" value="点我提交"/>
+			<input type="button" onclick="on()" value="点我都不能用。"/>
+		</form>
+		<script type="text/javascript">
+			function on(){
+				//document.getElements 获得一个是一个对象数组 。
+//				document.getElements
+				var inputs=document.getElementsByClassName("input");
+				//此时获得的对象inputs 相当于java中的对象数组 。
+//				for(var i=0;i<inputs.length;i++){
+//					inputs[i].disabled=true;
+//				}
+			}
+		</script>
+	</body>
+</html>

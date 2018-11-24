@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0px;
+				padding: 0px;	
+			}
+			div{
+				width: 100px;
+				height: 100px;
+			}
+			.div1{
+				background-color: red;
+				z-index: 11;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				opacity: 1;
+			}
+			.div2{
+				background-color: yellow;
+				/*
+				 开启绝对定位  会使元素提示一个层级  。
+				 当两个div定位到同一个位置的时候。那么谁的层级高   谁就会显示出来。
+				 层级低的会被层级高的覆盖。 
+				 * */
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				z-index: 10;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div1">
+			
+		</div>
+		<div class="div2">
+			
+		</div>
+	</body>
+</html>

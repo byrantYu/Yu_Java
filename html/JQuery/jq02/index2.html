@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//jquery ...js DOM 
+				$("#div1").append("<span onclick='on()'><font color='red'>点我</font></span>");
+			})
+			function on(){
+				var input = $("#input1").val();//val 专门用来获得表单元素的值。
+				alert(input);
+			}
+			$(function(){
+				var p = $("p:first");
+				$("p:last").text( "scrollTop:" + p.scrollTop());
+			})
+		</script>
+	</head>
+	<body>
+		<input type="text"  id="input1"  />
+		<!-- 轮播  改jquery的。-->
+		<div id="div1"></div>
+		<p>Hello</p>
+		<br />
+		<p>2nd Paragraph</p>
+	</body>
+</html>

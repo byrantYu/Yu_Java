@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.box1{
+				width: 200px;
+				height: 200px;
+				background-color: red;
+			}
+			
+			.box2{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+				position: relative;
+				/*相对定位是相对于元素在文档流中原来的位置进行定位
+				 
+				 1.当开启了元素的相对定位以后，而不设置偏移量时，元素不会发生任何变化
+				 *  2.相对定位是相对于元素在文档流中原来的位置进行定位
+				 * 	3.相对定位的元素不会脱离文档流(后面如果有元素  不会顶上来。)
+				 * 	4.相对定位会使元素提升一个层级
+				 * 	5.相对定位不会改变元素的性质，块还是块，内联还是内联(重点  跟浮动不一样。)
+				 * 
+				 
+				 * */
+				left: 100px;
+				top: 100px;
+			}
+			
+			.box3{
+				width: 200px;
+				height: 200px;
+				background-color: yellowgreen;
+				
+			}
+			
+			.s1{
+				width: 200px;
+				height: 200px;
+				background-color: yellow;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box1"></div>
+		<div class="box2"></div>
+		<div class="box3"></div>
+		<span class="s1">我是一个span</span>
+	</body>
+</html>

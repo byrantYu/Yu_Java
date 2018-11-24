@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			body{
+				margin:0px;
+				padding: 0px;
+			}
+			.header{
+				height: 15%;
+				border: 1px solid  red;
+				/*background-image: url(img/2.jpg);
+				background-size: 100%;*/
+				background:darkgoldenrod;
+			}
+			.body{
+				height:70%;
+				border: 1px solid green;
+			}
+			.footer{
+				height: 15%;
+				border: 1px solid yellow;
+			}
+			.left{
+				/*这里设置高度100% 是根据父元素的高度来决定的。*/
+				height: 100%;
+				width: 18%;
+				float: left;
+				border-right: 1px dashed red;
+			}
+			.center{
+				height: 100%;
+				width: 60%;
+				float: left;
+				border-right: 1px darkblue solid;
+			}
+			.right{
+				height: 100%;
+				width: 18%;
+				float: left;
+			}
+			.center_top{
+				height: 49%;
+				border-bottom: dashed 1px green;
+			}
+			.center_bottom{
+				height: 49%;
+			}
+			.cb_l{
+				float: left;
+				height: 100%;
+				width: 29%;
+				border-right: 1px dashed red;
+			}
+			.cb_r{
+				float: left;
+				height: 100%;
+				width: 70%;
+			}
+		</style>
+	</head>
+	<body style="height: 1000px;">
+		<div class="header">
+			<!--
+            	作者：offline
+            	时间：2018-09-27
+            	描述： logo ...  导航。。。
+            -->
+		</div>
+		<div class="body">
+			<div class="left"></div>
+			<div class="center">
+				<div class="center_top"></div>
+				<div class="center_bottom">
+					<!-- 中间的下边的左边。-->
+					<div class="cb_l"></div>
+					<div class="cb_r"></div>
+				</div>
+			</div>
+			<div class="right"></div>
+		</div>
+		<div class="footer"></div>
+	</body>
+</html>

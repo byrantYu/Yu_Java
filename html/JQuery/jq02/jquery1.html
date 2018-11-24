@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function (){
+				$("button").click(function(){
+					//1.attr 方法。 用来获得属性。
+					/*var name = $("#input1").attr("name");
+					alert(name);*/
+					//2.attr 方法 。用来给属性赋值。
+					//var name2 =  $("#input1").attr("title","我是提示内容。");
+					//3.attr 方法。 用来给属性批量赋值。
+					//$("#input1").attr({title:'提示内容',value:'张三丰'});
+					//4.attr 方法。用来给属性赋值 。属性值为方法的返回值。
+					//$("#input1").attr("value",function(){return 10+'哈哈'});
+					
+					//removeAttr方法。
+					$("#input1").removeAttr("placeholder");
+					
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<input id="input1" name="username" type="text" max="10" min="20" size="20" placeholder="请输入..." />
+		<button>点我</button>
+	</body>
+</html>

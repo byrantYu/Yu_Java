@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			function on(){
+				var person = new Object();
+				person.name="杰克";
+				person.age=18;
+				alert(person.name);
+				//简单的写法。
+				var xm = {name:"黄晓明",age:20};
+				alert(xm.name);
+			}
+			
+			function cn(){
+				//同样可以完成调用 。
+				var value = add(10,20,20,"哈哈"); //有返回值的 就可已拿变量接受 。
+				//alert(value);
+				//var haha = haha();
+				alert(typeof value);//number...
+			}
+			function add(a,b){
+				return a+b;
+			}
+			function haha(){
+				alert("哈哈");
+			}
+			function test1(){
+				//var length = 10;
+				//var name = "汤姆";  //JS中声明变量的格式 。
+				
+				var x, length
+				x = 5 
+				length = 6
+				alert(x)
+				alert(length)
+			}
+		</script>
+	</head>
+		<button onclick="test1()">点我</button>
+	</body>
+</html>

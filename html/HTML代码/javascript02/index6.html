@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			var person={fname:"John",lname:"Doe",age:25}; 
+			var txt = "";
+			//x 代表了 每一个属性名称 。foreach ...增强for循环 。
+			for(x in person){
+				txt+=person[x];
+			}
+			//alert(txt)
+			function on(obj){
+				return obj.constructor.toString().indexOf('Array')>-1;
+			}
+			window.onload=function (){
+				//var arr = [10,2,3435,34,12]
+				var arr = "123,324,23542";
+				var value = on(arr);
+				alert(value);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

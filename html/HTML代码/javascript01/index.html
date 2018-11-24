@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<body>
+		
+		<!-- 
+			onclick 表示事件的名称 。
+			ondblclick 双击时触发。
+			onsubmit="" 当表单提交的时候触发，一般书写在form 表单中
+			onmouseover="" 当鼠标移动过来的时候触发。
+			... 常用的事件。 用来触发js。。
+		-->
+		<button onclick="on(),cn()" >点我</button>
+		<br />
+		<button onclick="en(10,'哈哈哈',this,500)">点我2</button>
+		<br />
+		<button onclick="dn('sdf')">点我3</button>
+	<script type="text/javascript">
+			//java中没有全局变量的概念我们都叫（成员变量）。   全局变量 。
+			var text1 = "我是全局变量。"; 
+		
+			function on(){
+				// byte i = 10;
+				//var 
+				i = 10; //注意：在方法中声明变量 如果不使用var 关键字 。声明的是一个全局变量。
+				//alert(i++);
+				alert("on方法。"+i);
+//				alert(text2);
+			}
+			function cn(){
+				var text2 = "我是局部变量";
+				//alert("cn方法。"+text1);
+				alert(i);
+			}
+			//形式参数 。
+			function en(x,y,z){
+				alert(x+"=="+y+"=="+z);
+				// 此时  z 就表示传递过来的标签对象 。
+				// 对象里面封装了  属性跟方法。
+				var zz = z.innerHTML; //innerHTML属性的意思 表示当前标签对象内部的内容。
+				alert(zz);
+				alert(text1);
+			}
+			
+			function dn(x){
+				//alert("asd"+x);
+				
+				//JS中的数据类型 。
+				
+				//String类型 。字符串 。
+				//number类型。数字 。 整数 小数 正数 负数
+				//undefined 。未定义的类型 。
+				//null 空的。
+				//boolean 布尔类型。
+				
+				//对象类型 。  数组  ，html对象 。
+				var str1 = "哈还是收到了空间";
+				var str2 = '阿斯顿发撒旦法师打';
+				
+				var i1 = 10;
+				var i2 = 3.1415926;
+				var i3 = -1000.0003232;
+				
+				var u1;//undefined
+				
+				var n1 = null;  //null 是Object 中的一种 。
+				
+				var b1 = true;
+				var b2 = false;
+				
+//				int [] arrs = new int[10];
+				//
+				var a1 = new Array();  //Object 类型 。注意 ： null 属于Object类型。
+				a1[0]='哈哈';
+				a1[1]='呵呵';
+				a1[2]=123;
+				//alert(typeof(str2));
+//				alert(typeof(i3));
+//				alert(typeof(i2));
+//				alert(typeof(i1));
+//				alert(typeof(a1[0]))
+//				for(var i = 0;i<a1.length;i++){
+//					alert(a1[i]);
+//				}
+				var xx = '哈哈';
+				
+ 			}
+	</script>
+	</body>
+</html>

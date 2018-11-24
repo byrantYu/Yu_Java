@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>DOM测试</title>
+		<script type="text/javascript">
+			function on(){
+				//动态的生成一个  <font color="red">...好</font>
+				var div = document.getElementsByTagName("div")[0];
+				//创建出来的font对象。
+				//1.font对象就是你要添加的元素对象。
+				var font = document.createElement("font");
+				//2.font对象设置属性 。setAttribute();
+				font.setAttribute("color","red");
+				font.setAttribute("sb","haha");
+				//3.创建元素内部的文本 。document.createTextNode
+				var text = document.createTextNode("...好");
+				//4.再将文本放入到标签中 。appendChild  
+				font.appendChild(text)
+				// 第一次只是封装完成了 font元素 。
+				//要添加的子节点 还没有 。
+				div.appendChild(font);//????
+			}
+			
+			function append(){
+				var username = document.getElementById("username").value;
+				var password = document.getElementById("password").value;
+				//alert(username);
+				//alert(password);
+				var div = document.getElementById("div1");
+				//创建input 元素 。
+				var inputUserName = document.createElement("input");
+				inputUserName.setAttribute("value",username);
+				inputUserName.setAttribute("type","text");
+				inputUserName.setAttribute("disabled",true);
+				//创建密码的input 
+				var inputPassword = document.createElement("input");
+				inputPassword.setAttribute("type","text");
+				inputPassword.setAttribute("value",password);
+				inputPassword.setAttribute("disabled",true);
+				var br = document.createElement("br");
+				div.appendChild(inputUserName);
+				div.appendChild(inputPassword);
+				div.appendChild(br);
+				
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="username"  /> 
+		<input type="text" id="password"  /> 
+		<button onclick="append()">生成</button>
+		<hr />
+		<div id="div1"></div>
+		
+	</body>
+</html>
